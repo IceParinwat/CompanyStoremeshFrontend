@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Storemesh</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <img class="logo-image" src="./asset/image/storemesh.png" />
+          <div class="logo-text">Connecting Business</div>
+        </div>
+        <nav class="menu">
+          <a href="#">menu 1</a>
+          <a href="#">menu 2</a>
+          <a href="#">menu 3</a>
+        </nav>
+        <div class="search-section">
+          <div class="search-container">
+            <input
+              type="text"
+              id="search-box"
+              onkeyup="searchBox()"
+              placeholder="Search"
+            />
+          </div>
+          <div class="mobile-menu" id="mobileMenu" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars" id="menuIcon"></i>
+            <i
+              class="fa-solid fa-times"
+              id="closeIcon"
+              style="display: none"
+            ></i>
+          </div>
+          <div class="search-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="appMenu">
+            <img
+              src="./asset/image/applicationMenu.png"
+              alt="appMenu"
+              width="35px"
+            />
+          </div>
+          <div>
+            <img
+              class="profile-image"
+              src="https://placehold.co/400"
+              alt="Profile Image"
+              width="40"
+              height="40"
+            />
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <aside class="sidebar">
+          <div class="filter-section">
+            <div class="filter-header">
+              <span>Filter</span>
+            </div>
+            <div class="filter-options-container">
+              <select id="filterOptions" class="filter-options">
+                <option value="all">All</option>
+                <option value="Hero">Hero</option>
+                <option value="Art Toy">Art Toy</option>
+              </select>
+            </div>
+          </div>
+        </aside>
+
+        <!-- content -->
+        <section class="content">
+          <div class="data-sort">
+            <div class="data">Data</div>
+            <div class="sort-by">
+              <label for="sortOptions">Sort By: </label>
+              <div class="sort-options-container">
+                <select id="sortOptions" class="sort-options">
+                  <option value="name-asc">Name (A-Z)</option>
+                  <option value="name-desc">Name (Z-A)</option>
+                  <option value=  "price-asc">Price (Low to High)</option>
+                  <option value="price-desc">Price (High to Low)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div id="dataList"></div>
+          <div class="pagination">
+            <button id="prevPageBtn">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <span id="pageInfo"></span>
+            <button id="nextPageBtn">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./api.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
