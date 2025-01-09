@@ -366,6 +366,7 @@ header {
   }
   .menu.open {
     display: flex;
+    z-index: 1000;
   }
   .mobile-menu {
     display: block;
